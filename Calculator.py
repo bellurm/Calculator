@@ -13,7 +13,7 @@ Our Operations:
 6. Exponentiation
 7. Rooting
 
-Note: If you want to see the operation's list again, please enter this keyword: 'list'
+Note: If you want to see the operations list again, please enter this keyword: 'list'
 *****************************************************************************************
 """
 print(welcome)
@@ -83,5 +83,5 @@ def calculate():
         elif op == operations[7]:
             rooting()
         else:
-            print("[*] Invalid selection. Enter 'list' to see the list.")
+            print("[*] Invalid selection. To see the list, enter this keyword: 'list'.")
 calculate()
