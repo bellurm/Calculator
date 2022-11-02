@@ -1,10 +1,13 @@
+# blog-cyberworm.com
+# calculator.py updated for the education in my web site.
+
 import math
 
 welcome = """
 *****************************************************************************************
-Welcome to Calculator!
+Welcome to the Cyber Worm's Calculator!
 Our Operations:
-0. Exit
+99. Exit
 1. Addition
 2. Substraction
 3. Multiplication
@@ -12,76 +15,87 @@ Our Operations:
 5. Factorial
 6. Exponentiation
 7. Rooting
-
 Note: If you want to see the operations list again, please enter this keyword: 'list'
 *****************************************************************************************
 """
 print(welcome)
 
-operations = ["0", "1", "2", "3", "4", "5", "6", "7", "list"]
+operations = ["99", "1", "2", "3", "4", "5", "6", "7", "list"]
 
+# Toplama işlemi
 def addition():
-    num1 = float(input("First Number: "))
-    num2 = float(input("Second Number: "))
-    add = num1 + num2
-    print(num1, "+", num2, "=", add)
+    num1 = float(input("First number: "))
+    num2 = float(input("Second number: "))
+    print(f"{num1} + {num2} = {num1 + num2}")
 
+# Çıkarma işlemi
 def subtraction():
-    num1 = float(input("First Number: "))
-    num2 = float(input("Second Number: "))
-    sub = num1 - num2
-    print(num1, "-", num2, "=", sub)
+    num1 = float(input("First number: "))
+    num2 = float(input("Second number: "))
+    print(f"{num1} - {num2} = {num1 - num2}")
 
+# Çarpma işlemi
 def multiplication():
-    num1 = float(input("First Number: "))
-    num2 = float(input("Second Number: "))
-    mul = num1 * num2
-    print(num1, "*", num2, "=", mul)
+    num1 = float(input("First number: "))
+    num2 = float(input("Second number: "))
+    print(f"{num1} * {num2} = {num1 * num2}")
 
+# Bölme işlemi
 def division():
-    num1 = float(input("First Number: "))
-    num2 = float(input("Second Number: "))
-    div = num1 / num2
-    print(num1, "/", num2, "=", div)
+    num1 = float(input("First number: "))
+    num2 = float(input("Second number: "))
+    print(f"{num1} / {num2} = {num1 / num2}")
 
-def factorial():
-    number = int(input("Number: "))
+# Faktöriyel alma işlemi
+def factorial(number):
     fact = math.factorial(number)
-    print(f"{number}! = {fact}")
+    print(f"{number}! = {fact}") # Örnek çıktı: 5! = 120
 
+# Üs alma işlemi
 def exponentiation():
-    num1 = int(input("Number: "))
-    num2 = int(input("Exponentiate: "))
-    expo = math.pow(num1, num2)
-    print("Result: ", expo)
+    base = int(input("Number: "))           # taban
+    exponent = int(input("Exponentiate: ")) # kuvvet (üst)
+    expo = math.pow(base, exponent)
+    print(f"Result: {expo}")
 
-def rooting():
-    number = int(input("Number: "))
+# Kök alma işlemi
+def rooting(number):
     root = math.sqrt(number)
     print(f"The root of {number} is: {root}")
 
+# 'hesapla' fonksiyonu. İşlemlerin ana merkezi burası olacak.
 def calculate():
     while True:
-        op = str(input("\nSelect an operation's number from the menu: "))
-        if op == operations[0]:
+        choice = str(input("\nSelect an operation's number from the menu: "))
+        if choice == operations[0]:
             print("Have a nice day!")
             break
-        elif op == operations[-1]:
+            
+        elif choice == operations[-1]:
             print(welcome)
-        elif op == operations[1]:
+            
+        elif choice == operations[1]:
             addition()
-        elif op == operations[2]:
+            
+        elif choice == operations[2]:
             subtraction()
-        elif op == operations[3]:
+            
+        elif choice == operations[3]:
             multiplication()
-        elif op == operations[4]:
+            
+        elif choice == operations[4]:
             division()
-        elif op == operations[5]:
-            factorial()
-        elif op == operations[6]:
+            
+        elif choice == operations[5]:
+            factorial(number=int(input("Number: ")))
+            
+        elif choice == operations[6]:
             exponentiation()
-        elif op == operations[7]:
-            rooting()
+            
+        elif choice == operations[7]:
+            rooting(number=int(input("Number: ")))
+            
         else:
             print("[*] Invalid selection. To see the list, enter this keyword: 'list'.")
+
 calculate()
